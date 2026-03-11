@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stellar Vanguard | Form Pendaftaran</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+margin:0;
+background:linear-gradient(135deg,#0f0a1f,#1b0b2e,#2a0f45);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+width:420px;
+background:rgba(255,255,255,0.04);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:18px;
+box-shadow:0 0 25px rgba(168,85,247,0.3);
+}
+
+.title{
+text-align:center;
+font-size:24px;
+color:#c084fc;
+font-weight:bold;
+margin-bottom:20px;
+letter-spacing:1px;
+}
+
+.section{
+margin-top:18px;
+}
+
+.section h3{
+color:#d8b4fe;
+font-size:14px;
+margin-bottom:6px;
+letter-spacing:1px;
+}
+
+input,textarea,select{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+background:#1b1230;
+color:white;
+margin-top:6px;
+outline:none;
+transition:0.3s;
+}
+
+input:focus,textarea:focus,select:focus{
+box-shadow:0 0 10px #a855f7;
+}
+
+textarea{
+height:90px;
+resize:none;
+}
+
+button{
+width:100%;
+margin-top:20px;
+padding:14px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#a855f7,#7c3aed);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #a855f7;
+}
+
+.bukti{
+display:none;
+margin-top:25px;
+background:#140c28;
+padding:18px;
+border-radius:12px;
+border:1px solid rgba(168,85,247,0.4);
+}
+
+.bukti h3{
+color:#c084fc;
+margin-bottom:10px;
+}
+
+.data{
+margin:6px 0;
+font-size:14px;
+
+}
+
+.id{
+color:#a855f7;
+font-weight:bold;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">✨ STELLAR VANGUARD</div>
+
+<form id="form">
+
+<div class="section">
+<h3>DATA PRIBADI</h3>
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+<input type="number" id="umur" placeholder="Umur" required>
+</div>
+
+<div class="section">
+<h3>DATA GAME</h3>
+<input type="text" id="user" placeholder="Username Hotel Hideaway" required>
+</div>
+
+<div class="section">
+<h3>LOKASI</h3>
+<input type="text" id="kota" placeholder="Asal Kota" required>
+</div>
+
+<div class="section">
+<h3>ALASAN BERGABUNG</h3>
+<textarea id="alasan" placeholder="Ceritakan alasan bergabung..." required></textarea>
+</div>
+
+<div class="section">
+<h3>PILIH ADMIN</h3>
+
+<select id="admin" required>
+<option value="">-- Pilih Admin --</option>
+<option value="Admin Hanz">Admin Vio</option>
+<option value="Admin pio">Admin Chika</option>
+<option value="Admin Ridow">Admin Ridow</option>
+<option value="Admin aca">Admin Hanz</option>
+</select>
+
+</div>
+
+<button type="submit">Kirim Pendaftaran</button>
+
+</form>
+
+
+<div class="bukti" id="bukti">
+
+<h3>✔ Bukti Pendaftaran Stellar Vanguard</h3>
+
+<div class="data id">ID: <span id="id"></span></div>
+<div class="data">Nama: <span id="bnama"></span></div>
+<div class="data">Umur: <span id="bumur"></span></div>
+<div class="data">Username: <span id="buser"></span></div>
+<div class="data">Kota: <span id="bkota"></span></div>
+<div class="data">Admin Dipilih: <span id="badmin"></span></div>
+<div class="data">Alasan: <span id="balasan"></span></div>
+<div class="data">Tanggal: <span id="tanggal"></span></div>
+<button onclick="kirimWA()">Kirim Bukti ke WhatsApp Admin</button>
+<div style="margin-top:20px;text-align:center;font-size:14px;color:#d8b4fe;">
+Ikuti Stellar Vanguard:
+<br>
+
+<a href="https://www.instagram.com/stellarvanguard.hh?igsh=eHQ2a3VxcWEyeGVu" target="_blank" 
+style="color:#c084fc;text-decoration:none;margin-right:25px;display:inline-flex;align-items:center;gap:6px;">
+
+<img src="11.png" width="50" height="24">
+Instagram
+</a>
+
+<a href="2.png" target="_blank" 
+style="color:#c084fc;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+
+<img src="https://img.icons8.com/color/48/tiktok--v1.png" width="24" height="24">
+TikTok
+</a>
+
+</div>
+</a>
+
+</div>
+</div>
+
+<script>
+
+document.getElementById("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let randomID="SV-"+Math.floor(Math.random()*99999);
+
+id.innerText=randomID;
+bnama.innerText=nama.value;
+bumur.innerText=umur.value;
+buser.innerText=user.value;
+bkota.innerText=kota.value;
+badmin.innerText=admin.value;
+balasan.innerText=alasan.value;
+
+let today=new Date().toLocaleDateString("id-ID");
+tanggal.innerText=today;
+
+bukti.style.display="block";
+
+window.scrollTo(0,document.body.scrollHeight);
+
+});
+function kirimWA(){
+
+let adminDipilih = document.getElementById("badmin").innerText;
+
+let nomorAdmin="";
+
+if(adminDipilih=="Admin Vio"){
+nomorAdmin="6287718192402";
+}
+else if(adminDipilih=="Admin Chika"){
+nomorAdmin="6285792394330";
+}
+else if(adminDipilih=="Admin Ridow"){
+nomorAdmin="6283879471293";
+}
+else if(adminDipilih=="Admin Hanz"){
+nomorAdmin="62895329891756";
+}
+
+let pesan=
+"Halo Admin Stellar Vanguard\n\n"+
+"Saya sudah mendaftar:\n\n"+
+"ID: "+document.getElementById("id").innerText+"\n"+
+"Nama: "+document.getElementById("bnama").innerText+"\n"+
+"Umur: "+document.getElementById("bumur").innerText+"\n"+
+"Username: "+document.getElementById("buser").innerText+"\n"+
+"Kota: "+document.getElementById("bkota").innerText+"\n"+
+"Admin Dipilih: "+document.getElementById("badmin").innerText+"\n"+
+"Tanggal: "+document.getElementById("tanggal").innerText;
+
+let url="https://wa.me/"+nomorAdmin+"?text="+encodeURIComponent(pesan);
+
+window.open(url,"_blank");
+
+}
+
+ 
+
+</script>
+
+</body>
+</html>
