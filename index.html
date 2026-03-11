@@ -258,9 +258,10 @@ let pesan=
 "Admin Dipilih: "+document.getElementById("badmin").innerText+"\n"+
 "Tanggal: "+document.getElementById("tanggal").innerText;
 
-let url="https://wa.me/"+nomorAdmin+"?text="+encodeURIComponent(pesan);
+let url="whatsapp://send?phone="+nomorAdmin+"&text="+encodeURIComponent(pesan);
 
-window.open(url,"_blank");
+window.location.href=url;
+
 
 }
 
@@ -269,4 +270,5 @@ window.open(url,"_blank");
 </script>
 
 </body>
+
 </html>
